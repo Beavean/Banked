@@ -7,13 +7,13 @@
 
 import UIKit
 
+enum AccountType: String, Codable {
+    case Banking
+    case CreditCard
+    case Investment
+}
+
 class AccountSummaryCell: UITableViewCell {
-    
-    enum AccountType: String {
-        case Banking
-        case CreditCard
-        case Investment
-    }
     
     struct ViewModel {
         let accountType: AccountType
@@ -66,6 +66,7 @@ extension AccountSummaryCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
         nameLabel.text = "Account name"
+        nameLabel.adjustsFontSizeToFitWidth = true
         contentView.addSubview(nameLabel)
         
         balanceStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,6 +76,7 @@ extension AccountSummaryCell {
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceLabel.textAlignment = .right
+        balanceLabel.adjustsFontSizeToFitWidth = true
         balanceLabel.text = "Some balance"
         
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
