@@ -72,12 +72,13 @@ extension AnimatedBellView {
 }
 
 // MARK: - Actions
+
 extension AnimatedBellView {
     @objc func imageViewTapped(_ recognizer: UITapGestureRecognizer) {
         shakeWith(duration: 1.0, angle: .pi/8, yOffset: 0.0)
     }
     
-    private func shakeWith(duration: Double, angle: CGFloat, yOffset: CGFloat) {
+    func shakeWith(duration: Double, angle: CGFloat, yOffset: CGFloat) {
         let numberOfFrames: Double = 6
         let frameDuration = Double(1/numberOfFrames)
         
